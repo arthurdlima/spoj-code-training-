@@ -1,0 +1,59 @@
+import java.util.*;
+
+// https://br.spoj.com/problems/ENCOTEL/
+
+public class Main {
+	public static void main (String args []) {
+		String expressao = "";
+
+		Scanner input = new Scanner (System.in);
+
+		while(input.hasNext()){
+			String resposta = "";
+			expressao = input.next();
+			//int pos recebe UNICODE de 65-90; A-Z
+			for (int i = 0; i<expressao.length();i++) {
+				int pos=expressao.charAt(i);
+				if (pos>=65 && pos<=67) {
+					resposta+=2;
+				}
+				if (pos>=68 && pos<=70) {
+					resposta+=3;
+				}
+				if (pos>=71 && pos<=73) {
+					resposta+=4;
+				}
+				if (pos>=74 && pos<=76) {
+					resposta+=5;
+				}
+				if (pos>=77 && pos<=79) {
+					resposta+=6;
+				}
+				if (pos>=80 && pos<=83) {
+					resposta+=7;
+				}
+				if (pos>=84 && pos<=86) {
+					resposta+=8;
+				}
+				if (pos>=87 && pos<=90) {
+					resposta+=9;
+				}
+				if (pos==49) {
+					resposta+=1;
+				}
+				if (pos==48) {
+					resposta+=0;
+				}
+				if (pos==45) {
+					resposta+= "-";
+				}
+		
+
+			}
+			System.out.println(resposta);
+
+		}
+		input.close();
+	}
+
+}

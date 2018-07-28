@@ -1,0 +1,28 @@
+import java.util.*;
+
+//https://br.spoj.com/problems/CHAMADA1/
+
+public class Main {
+
+public static void main(String[] args) {
+//variaveis---------------------------------- 
+int n = 0;
+int k = 0;
+//-------------------------------------------
+Scanner input = new Scanner (System.in); 
+while(input.hasNextInt()){
+n = input.nextInt();
+k = input.nextInt();
+}
+List<String> listaAluno = new ArrayList<String>(n); 
+while(input.hasNext()){
+listaAluno.add(input.nextLine());
+}
+//fechando o input 
+input.close();
+Collections.sort(listaAluno);
+System.out.println(listaAluno.get(k));
+
+}
+
+}

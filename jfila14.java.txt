@@ -1,0 +1,70 @@
+import java.util.*;
+import java.lang.*;
+public class Main {
+
+	public static void main(String[] args) {
+
+		// https://br.spoj.com/problems/JFILA14/
+		Scanner input = new Scanner(System.in);
+
+		while(input.hasNextInt()) {
+			int [] entrada;
+			int [] qtSair;
+			int tamanho;
+			int tamanhoSaida;
+
+
+			//System.out.println("informe entrada");
+			tamanho = input.nextInt();
+			entrada = new int[tamanho];
+
+			//System.out.println("informe numeros");
+			for(int i=0;i<tamanho;i++) {
+				entrada[i]=input.nextInt();
+			}
+			// ---------
+			/*for(int i=0;i<tamanho;i++) {
+				System.out.println(entrada[i]+" ");
+			}*/
+
+			//----------------	
+
+			//System.out.println("Quantos remover?");
+			tamanhoSaida = input.nextInt();
+			qtSair = new int[tamanhoSaida];
+
+			for(int i=0; i<tamanhoSaida; i++) {
+				qtSair[i] = input.nextInt();
+			}
+
+
+			//Pesquisando para remover
+			for(int i=0; i<tamanhoSaida;i++) {
+
+				for(int j=0; j<tamanho; j++) {
+
+					if(qtSair[i]==entrada[j]) {
+						entrada[j] = 0;
+						break;
+					}
+
+				}
+
+			}
+			qtSair = null;
+
+			// print resultado
+			for(int i=0; i<tamanho;i++) {
+				if(entrada[i]!=0) {
+					System.out.print(entrada[i]+" ");
+				}
+
+			}
+
+
+		}
+
+
+	}
+
+}
